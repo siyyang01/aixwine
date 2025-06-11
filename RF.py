@@ -55,8 +55,7 @@ report_white = classification_report(y_white, y_pred_white, output_dict=True)
 cm_red = confusion_matrix(y_test, y_pred_red)
 cm_white = confusion_matrix(y_white, y_pred_white)
 
-# 시각화 함수
-def plot_confusion_matrix(cm, title):
+def plot_confusion_matrix(cm, title, path):
     plt.figure(figsize=(4, 4))
     sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', cbar=False,
                 xticklabels=['Pred: Bad', 'Pred: Good'],
@@ -65,11 +64,9 @@ def plot_confusion_matrix(cm, title):
     plt.xlabel('Predicted')
     plt.ylabel('Actual')
     plt.tight_layout()
-    return plt
+    plt.savefig(path)
+    plt.close()
 
-plt1 = plot_confusion_matrix(cm_red, "Random Forest Confusion Matrix (Red Test)")
-plt2 = plot_confusion_matrix(cm_white, "Random Forest Confusion Matrix (White Generalization)")
-plt1.savefig("image/rf_confusion_red.png")
-plt2.savefig("image/rf_confusion_white.png")
-plt1.close()
-plt2.close()
+# 각각 저장
+plot_confusion_matrix(cm_red, "Random Forest Confusion Matrix (Red Test)", "image/rf_confusion_red.png")
+plot_confusion_matrix(cm_white, "Random Forest Confusion Matrix (White Generalization)", "image/rf_confusion_white.png")
