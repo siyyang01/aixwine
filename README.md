@@ -23,3 +23,5 @@ Red Wine 데이터를 통해 모델을 학습하고, 이를 White Wine 데이터
 ### 3.1.2 Baseline model - Random Forest
 Red Wine 데이터로 학습 후, 같은 도메인(red) 및 다른 도메인(white)에서 평가를 진행
 
+
+### 3.1.3 Red Wine Test Results
