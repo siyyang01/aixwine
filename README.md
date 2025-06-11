@@ -26,5 +26,8 @@ Red Wine 데이터로 학습 후, 같은 도메인(red) 및 다른 도메인(whi
 
 ### 3.1.3 Red Wine Test Results
 ![Confusion Matrix - Red](image/rf_confusion_red.png)
+- Accuracy: 79.4%
 
+### 3.1.4 White Wine Test Results
+![Confusion Matrix - White](image/rf_confusion_white.png)
 
