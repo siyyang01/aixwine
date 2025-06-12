@@ -50,3 +50,20 @@ Red Wine 데이터로 학습 후, 같은 도메인(red) 및 다른 도메인(whi
   - 실제로 white wine에 대해 더 나은 일반화 성능을 기대할 수 있으며, 이후 실험에서 이를 비교 분석할 예정.
 
 
+## 3.2 XGBoost
+### 3.2.1 Red Wine Test Results
+![Confusion Matrix - Red](image/xgb_confusion_red.png)
+- Accuracy: 79.1%
+
+### 3.2.2 White Wine Test Results
+![Confusion Matrix - White](image/xgb_confusion_white.png)
+- Precision:
+  - `Good (1)`: 0.837
+  - `Bad (0)`: 0.441
+- Recall:
+  - `Good (1)`: 0.481
+  - `Bad (0)`: 0.815
+
+### 3.2.3 Feature Importance
+![Feature Importance](image/xgb_feature_importance.png)
+
