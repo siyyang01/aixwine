@@ -67,3 +67,12 @@ Red Wine 데이터로 학습 후, 같은 도메인(red) 및 다른 도메인(whi
 ### 3.2.3 Feature Importance
 ![Feature Importance](image/xgb_feature_importance.png)
 
+### 3.2.4 Overall
+- White Wine의 Generalization에서 **Good을 놓치는 경우가 많고, 반대로 Bad는 잘 맞추는 모습을 보인다**.
+- Domain Shift의 영향이 큰 것으로 보임. (white wine의 `Good` 특성을 잘 일반화하지 못함.)
+
+- XGBoost는 **Red Wine 내에서는 강력하지만**, **White Wine의 일반화 성능은 오히려 하락**하는 모습을 보인다.
+- 이유로는:
+  - 트리의 깊이 및 잔차 보완 학습이 **red 데이터 분포에 과적합**된 결과
+  - white wine의 `Good` 클래스 분포가 더 복잡하거나 다르게 구성됨.
+
