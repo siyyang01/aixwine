@@ -126,4 +126,17 @@ Red Wine 데이터로 학습 후, 같은 도메인(red) 및 다른 도메인(whi
 - 하이퍼파라미터 튜닝을 통해 red wine에서의 성능은 **의미 있게 향상**
 - 하지만 white wine 일반화에는 **제한적인 효과** → 분포 차이 영향은 여전함.
 
+# 5. Conclusion
+- 본 프로젝트는 **Red Wine 데이터로 학습한 모델을 White Wine에 적용**하는 방식으로, 머신러닝 모델의 **도메인 일반화 성능**을 평가하였다.
+- `Random Forest`, `XGBoost` 모두 Red Wine에서는 높은 정확도를 보였으나, White Wine으로 일반화할 경우에 성능 저하가 발생하였다.
+- 특히, 두 와인의 **화학적 특성 분포 차이**로 인해 Good/Bad 클래스 간 경계가 모델 간 다르게 학습되며 일반화에 한계가 있었다.
+- `XGBoost` 모델에 대해 하이퍼파라미터 튜닝을 진행한 결과 Red Wine에서는 의미 있는 성능 향상이 있었으나, White Wine에 대한 일반화에는 제한적인 효과만을 보였다.
+- 따라서 **단일 도메인에서의 성능만으로 모델을 일반화 가능하다고 보기에는 어렵고**, 추후에는:
+  - `Red + White 데이터 통합 학습`
+  - `Domain Adaptation 기법 (ex. Transfer Learning)`
+  - `앙상블 기법`
+    등의 추가 연구가 필요함을 시사한다.
 
+# 6. Citation
+- - P. Cortez, A. Cerdeira, F. Almeida, T. Matos and J. Reis, "Modeling wine preferences by data mining from physicochemical properties", *Decision Support Systems*, Elsevier, 47(4):547-553, 2009.
+- Dataset available at: [UCI Machine Learning Repository - Wine Quality](https://archive.ics.uci.edu/ml/datasets/Wine+Quality)
