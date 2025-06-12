@@ -4,8 +4,24 @@
 양시영 건설환경공학과 2021042424 kongou1324@gmail.com
 
 # 1. Overview
-## 1.1 Red to White Generalization
-Red Wine 데이터를 통해 모델을 학습하고, 이를 White Wine 데이터에 적용해 일반화 성능을 평가하는 프로젝트입니다. 와인의 11개의 수치형 화학 성분을 통해 품질을 예측하며, Wine의 종류가 바뀌었을 때 발생하는 domain shift 현상에 대해 분석합니다.
+## 1.1 Background & Objective
+와인의 품질은 다양한 화학적 성분에 따라 결정되며, 이를 수치적으로 예측하는 문제는 **정량적 분석 + 머신러닝 응용**을 통해 이루어지고, 이에 대해 많으 연구 결과들이 있다. 본 프로젝트에서는 **Red Wine 데이터만을 활용하여 모델을 학습**하고, **White Wine 데이터에 대한 일반화 성능**을 평가함으로써 **Domain Shift**문제를 다루고자 한다.
+
+## 1.2 Key Focus
+- `Binary Classification`: 와인의 품질`quality`을 이진 레이블(Good/Bad)로 전처리하여 분류 문제로 단순화
+- `Cross-Domain Generalization`: Red Wine으로 학습한 모델이 White Wine에도 적용 가능한가?
+- `Model Comparison`:
+  - Baseline: `Random Forest`
+  - Advanced: `XGBoost`
+- `Model Improvement`:
+  - Feature importance 분석
+  - 하이퍼파라미터 튜닝 (GridSearchCV)
+  - 일반화 성능 향상 시도 및 한계 분석
+ 
+### 1.3 Summary of Findings
+- Random Forest는 red wine에서는 더 좋은 성능을 보이지만, white wine에서는 정확도 급락
+- XGBoost는 더 섬세한 경계를 학습하나 여전히 도메인 차이를 극복하진 못함.
+- 하이피파라미터튜닝을 통해 red wine 정확도는 향상하였으나 white wine 성능 향상은 미미
 
 # 2. Dataset
 - `winequality-red.csv` (1,599 samples)
