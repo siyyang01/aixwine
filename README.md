@@ -12,7 +12,7 @@ Red Wine 데이터를 통해 모델을 학습하고, 이를 White Wine 데이터
 - `winequality-white.csv` (4,898 samples)
 - Columns: 11개의 수치형 화학 성분 + `quality` (score: 0~10)
 
-# 3. Analysis based on strategy
+# 3. Analysis based on Theory
 ## 3.1 Random Forest
 ### 3.1.1 Labeling Strategy
 - 원본 'quality' 는 정수 점수(0~10)
@@ -76,3 +76,16 @@ Red Wine 데이터로 학습 후, 같은 도메인(red) 및 다른 도메인(whi
   - 트리의 깊이 및 잔차 보완 학습이 **red 데이터 분포에 과적합**된 결과
   - white wine의 `Good` 클래스 분포가 더 복잡하거나 다르게 구성됨.
 
+# 4. Hyperparameter Tuning
+## 4.1 Motivation
+- 기존 Random Forest 및 기본 XGBoost 모델은 red wine 데이터에서는 높은 성능을 보였으나, white wine으로 일반화할 경우 정확도가 **66~67%** 에 머무르는 한계를 보였다.
+- 이를 극복하고자 XGBoost에 대하여 하이피파라미터 튜닝을 진행.
+
+## 4.2 Tuning Details
+- 사용 기법: `GridSearchCV` (5-fold cross validation)
+- 주요 튜닝 파라미터:
+  - `n_estimators`: [100, 200, 300]
+  - `max_depths`: [3, 5, 7]
+  - `learning_rate`: [0.05, 0.1, 0.2]
+
+## 4.3
