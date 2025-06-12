@@ -88,4 +88,26 @@ Red Wine 데이터로 학습 후, 같은 도메인(red) 및 다른 도메인(whi
   - `max_depths`: [3, 5, 7]
   - `learning_rate`: [0.05, 0.1, 0.2]
 
-## 4.3
+## 4.3 Evaluations
+### 4.3.1 Red Wine
+![Confusion matrix - Red](image/xgb_tuned_confusion_red.png)
+- Accuracy: 80.4%
+- Precision(Good): 81.3%
+- Recall(Good): 83.6% → 기존 XGBoost 대비 **정확도 +1.3%**, 특히 Good 클래스에 대한 **Recall이 크게 향상됨**.
+
+### 4.3.2 White Wine
+![Confusion matrix - White](image/xgb_tuned_confusion_white.png)
+- Accuracy: 66.9%
+- Precision: 83.2%
+- Recall: 48.5% → White Wine에 대한 **정확도는 비슷**, 다만 **Precision은 증가**, Recall은 소폭 하락. 여전히 **Domain shift**로 인한 **일반화의 어려움**이 존재.
+
+### 4.3.3 Feature Importance
+![Feature Importance](image/xgb_tuned_feature_importance.png)
+- 튜닝된 모델에서도 `alcohol`이 가장 중요한 변수로 선정
+- 그 외 `volatile acidity`, `density` 등이 중요하게 학습됨
+
+## 4.4 Summary
+- 하이퍼파라미터 튜닝을 통해 red wine에서의 성능은 **의미 있게 향상**
+- 하지만 white wine 일반화에는 **제한적인 효과** → 분포 차이 영향은 여전함.
+
+
