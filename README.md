@@ -18,7 +18,7 @@
   - 하이퍼파라미터 튜닝 (GridSearchCV)
   - 일반화 성능 향상 시도 및 한계 분석
  
-### 1.3 Summary of Findings
+## 1.3 Summary of Findings
 - Random Forest는 red wine에서는 더 좋은 성능을 보이지만, white wine에서는 정확도 급락
 - XGBoost는 더 섬세한 경계를 학습하나 여전히 도메인 차이를 극복하진 못함.
 - 하이피파라미터튜닝을 통해 red wine 정확도는 향상하였으나 white wine 성능 향상은 미미
